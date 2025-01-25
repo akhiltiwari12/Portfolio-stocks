@@ -1,0 +1,274 @@
+/* Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+}
+
+body, html {
+  height: 100%;
+  width: 100%;
+  background-color: #f4f5f7;
+  color: #333;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: 'Arial', sans-serif;
+  font-weight: 600;
+}
+
+/* Main Layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  height: 100%;
+  background-color: #f4f5f7;
+}
+
+.header {
+  background-color: #283593;
+  color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  width: 100%;
+}
+
+.header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.add-stock-btn {
+  background-color: #ff9800;
+  color: white;
+  padding: 0.6rem 1.2rem;
+  border-radius: 0.4rem;
+  display: flex;
+  align-items: center;
+  transition: background-color 0.3s ease;
+}
+
+.add-stock-btn:hover {
+  background-color: #f57c00;
+}
+
+.add-stock-btn svg {
+  margin-right: 0.5rem;
+}
+
+/* Dashboard Cards */
+.dashboard {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+  max-width: 100%;
+}
+
+.dashboard .card {
+  background-color: white;
+  border-radius: 0.8rem;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: box-shadow 0.3s ease;
+}
+
+.dashboard .card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card h3 {
+  font-size: 1.4rem;
+  margin-bottom: 1rem;
+  color: #555;
+}
+
+.card p {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333;
+}
+
+/* Form Modal */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1rem;
+}
+
+.modal {
+  background-color: white;
+  border-radius: 0.8rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 500px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+}
+
+.form-input:focus {
+  outline: none;
+  border-color: #283593;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.form-actions button {
+  padding: 0.8rem 1.6rem;
+  border-radius: 0.4rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.form-actions .cancel-btn {
+  background-color: #f44336;
+  color: white;
+}
+
+.form-actions .cancel-btn:hover {
+  background-color: #d32f2f;
+}
+
+.form-actions .submit-btn {
+  background-color: #283593;
+  color: white;
+}
+
+.form-actions .submit-btn:hover {
+  background-color: #1a237e;
+}
+
+/* Stocks List */
+.stock-list {
+  padding: 2rem;
+  flex: 1; /* Take remaining space */
+}
+
+.stock-list h2 {
+  font-size: 1.6rem;
+  margin-bottom: 1rem;
+}
+
+.stock-item {
+  background-color: white;
+  padding: 1.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.8rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stock-item .stock-details {
+  font-size: 1.2rem;
+  color: #555;
+}
+
+.stock-item .stock-details span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.stock-item .actions {
+  display: flex;
+  gap: 1rem;
+}
+
+.actions button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #555;
+  transition: color 0.3s ease;
+}
+
+.actions button:hover {
+  color: #283593;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1.5rem;
+  }
+
+  .header h1 {
+    margin-bottom: 1rem;
+  }
+
+  .dashboard {
+    padding: 1rem;
+  }
+
+  .modal {
+    padding: 1.5rem;
+  }
+
+  .stock-item {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .stock-item .stock-details {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    padding: 1rem;
+  }
+
+  .dashboard {
+    padding: 0.5rem;
+  }
+
+  .modal {
+    padding: 1rem;
+  }
+
+  .stock-list {
+    padding: 1rem;
+  }
+}
